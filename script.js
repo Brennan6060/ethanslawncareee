@@ -30,8 +30,7 @@ function getQuote() {
             "Customer Name: " + name + "%0D%0A" +
             "Phone Number: " + phone + "%0D%0A" +
             "Service Needed: " + service + "%0D%0A" +
-            "Yard Size: " + yardSize + "%0D%0A%0D%0A" +
-            "Please contact this customer soon.";
+            "Yard Size: " + yardSize;
 
         window.location.href =
             "mailto:nezzyisbeautiful6@gmail.com" +
