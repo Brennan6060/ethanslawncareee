@@ -4,17 +4,17 @@ function getQuote() {
 
     let service = prompt(
         "What service do you need?\n\n" +
-        "Lawn Mowing\n" +
-        "Landscaping\n" +
-        "Yard Cleanup\n" +
-        "Edging"
+        "• Lawn Mowing\n" +
+        "• Landscaping\n" +
+        "• Yard Cleanup\n" +
+        "• Edging"
     );
 
     let yardSize = prompt(
         "What size is your yard?\n\n" +
-        "Small\n" +
-        "Medium\n" +
-        "Large"
+        "• Small\n" +
+        "• Medium\n" +
+        "• Large"
     );
 
     let phone = prompt(
@@ -23,21 +23,21 @@ function getQuote() {
 
     if (name && service && yardSize && phone) {
 
-        alert(
-            "Quote Request Submitted!\n\n" +
-            "Name: " + name + "\n" +
-            "Phone: " + phone + "\n" +
-            "Service: " + service + "\n" +
-            "Yard Size: " + yardSize
-        );
+        let quoteInfo =
 
-        console.log(
-            "NEW QUOTE REQUEST\n" +
-            "Name: " + name + "\n" +
-            "Phone: " + phone + "\n" +
-            "Service: " + service + "\n" +
-            "Yard Size: " + yardSize
-        );
+            "QUOTE REQUEST SUBMITTED!\n\n" +
+
+            "Customer Name: " + name + "\n\n" +
+
+            "Phone Number: " + phone + "\n\n" +
+
+            "Service Needed: " + service + "\n\n" +
+
+            "Yard Size: " + yardSize;
+
+        alert(quoteInfo);
+
+        console.log(quoteInfo);
 
     } else {
 
