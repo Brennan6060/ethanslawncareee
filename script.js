@@ -1,3 +1,5 @@
+emailjs.init("YOUR_PUBLIC_KEY");
+
 function getQuote() {
 
     let name = prompt("Enter your name:");
@@ -23,19 +25,41 @@ function getQuote() {
 
     if (name && service && yardSize && phone) {
 
-        let subject =
-            "New Lawn Care Quote Request";
+        let templateParams = {
 
-        let body =
-            "Customer Name: " + name + "%0D%0A" +
-            "Phone Number: " + phone + "%0D%0A" +
-            "Service Needed: " + service + "%0D%0A" +
-            "Yard Size: " + yardSize;
+            customer_name: name,
 
-        window.location.href =
-            "mailto:nezzyisbeautiful6@gmail.com" +
-            "?subject=" + subject +
-            "&body=" + body;
+            customer_phone: phone,
+
+            customer_service: service,
+
+            customer_yardsize: yardSize
+
+        };
+
+        emailjs.send(
+            "YOUR_SERVICE_ID",
+            "YOUR_TEMPLATE_ID",
+            templateParams
+        )
+
+        .then(function(response) {
+
+            alert(
+                "Quote Request Sent Successfully!"
+            );
+
+        })
+
+        .catch(function(error) {
+
+            alert(
+                "Failed to send quote request."
+            );
+
+            console.log(error);
+
+        });
 
     } else {
 
