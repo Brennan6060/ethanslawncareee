@@ -1,5 +1,3 @@
-emailjs.init("YOUR_PUBLIC_KEY");
-
 function getQuote() {
 
     let name = prompt("Enter your name:");
@@ -25,41 +23,21 @@ function getQuote() {
 
     if (name && service && yardSize && phone) {
 
-        let templateParams = {
+        alert(
+            "Quote Request Submitted!\n\n" +
+            "Name: " + name + "\n" +
+            "Phone: " + phone + "\n" +
+            "Service: " + service + "\n" +
+            "Yard Size: " + yardSize
+        );
 
-            customer_name: name,
-
-            customer_phone: phone,
-
-            customer_service: service,
-
-            customer_yardsize: yardSize
-
-        };
-
-        emailjs.send(
-            "YOUR_SERVICE_ID",
-            "YOUR_TEMPLATE_ID",
-            templateParams
-        )
-
-        .then(function(response) {
-
-            alert(
-                "Quote Request Sent Successfully!"
-            );
-
-        })
-
-        .catch(function(error) {
-
-            alert(
-                "Failed to send quote request."
-            );
-
-            console.log(error);
-
-        });
+        console.log(
+            "NEW QUOTE REQUEST\n" +
+            "Name: " + name + "\n" +
+            "Phone: " + phone + "\n" +
+            "Service: " + service + "\n" +
+            "Yard Size: " + yardSize
+        );
 
     } else {
 
