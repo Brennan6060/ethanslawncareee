@@ -17,15 +17,26 @@ function getQuote() {
         "Large"
     );
 
-    if (name && service && yardSize) {
+    let phone = prompt(
+        "Enter your phone number:"
+    );
 
-        alert(
-            "Quote Request Submitted!\n\n" +
-            "Name: " + name + "\n" +
-            "Service: " + service + "\n" +
-            "Yard Size: " + yardSize + "\n\n" +
-            "We will contact you shortly!"
-        );
+    if (name && service && yardSize && phone) {
+
+        let subject =
+            "New Lawn Care Quote Request";
+
+        let body =
+            "Customer Name: " + name + "%0D%0A" +
+            "Phone Number: " + phone + "%0D%0A" +
+            "Service Needed: " + service + "%0D%0A" +
+            "Yard Size: " + yardSize + "%0D%0A%0D%0A" +
+            "Please contact this customer soon.";
+
+        window.location.href =
+            "mailto:nezzyisbeautiful6@gmail.com" +
+            "?subject=" + subject +
+            "&body=" + body;
 
     } else {
 
